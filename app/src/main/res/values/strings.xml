@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">dory</string>
+    <string name="sign_in_email_input">Enter Email</string>
+    <string name="sign_in_password_input">Enter Password</string>
+    <string name="sign_in_submit_button">Sign In</string>
 </resources>
