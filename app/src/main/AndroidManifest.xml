@@ -3,12 +3,14 @@
     package="com.example.dory">
 
     <application
-        android:allowBackup="true"
+        android:fullBackupContent="@android:@xml"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Dory">
+        android:theme="@style/Theme.Dory"
+        android:allowBackup="false">
+        <activity android:name=".CreateUser" />
         <activity android:name=".AuthenticationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

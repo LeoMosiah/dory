@@ -3,5 +3,6 @@
     <string name="sign_in_email_input">Enter Email</string>
     <string name="sign_in_password_input">Enter Password</string>
     <string name="sign_in_submit_button">Sign In</string>
+    <string name="sign_up_submit_button">Sign Up</string>
     <string name="last_time_logged_in">Last Time Logged In</string>
 </resources>

@@ -25,7 +25,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     public void signIn(View view) {
         EditText emailEditText = findViewById(R.id.editTextEmail);
         EditText passwordEditText = findViewById(R.id.editTextPassword);
-        mAuth.signInWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
+        mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "signInWithEmail:success");
