@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class CreateUser extends AppCompatActivity {
+public class CreateUserActivity extends AppCompatActivity {
     private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private final String TAG = "CreateUserActivity";
 
@@ -20,6 +20,10 @@ public class CreateUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
+        findViewById(R.id.sign_in_redirect).setOnClickListener(v -> {
+            startActivity(new Intent(this, AuthenticationActivity.class));
+            finish();
+        });
     }
 
     public void signUp(View view) {
@@ -33,7 +37,7 @@ public class CreateUser extends AppCompatActivity {
                         startActivity(new Intent(this, MainActivity.class));
                     } else {
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
-                        Toast.makeText(CreateUser.this, "Authentication failed.",
+                        Toast.makeText(CreateUserActivity.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });

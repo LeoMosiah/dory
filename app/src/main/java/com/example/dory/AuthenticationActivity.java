@@ -36,6 +36,10 @@ public class AuthenticationActivity extends AppCompatActivity {
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         findViewById(R.id.google_sign_in_button).setOnClickListener(v -> signInWithGoogle());
+        findViewById(R.id.sign_up_redirect).setOnClickListener(v -> {
+            startActivity(new Intent(this, CreateUserActivity.class));
+            finish();
+        });
     }
 
     protected void onStart(){
@@ -54,9 +58,8 @@ public class AuthenticationActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Log.d(TAG, "signInWithEmail:success");
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        startActivity(new Intent(this, MainActivity.class));
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
                     } else {
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
                         Toast.makeText(AuthenticationActivity.this, "Authentication failed.",
@@ -94,6 +97,8 @@ public class AuthenticationActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "signInWithCredential:success");
                         FirebaseUser user = mAuth.getCurrentUser();
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
                     } else {
                         Log.w(TAG, "signInWithCredential:failure", task.getException());
                     }

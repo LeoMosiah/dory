@@ -3,17 +3,20 @@ package com.example.dory;
 public class UserModel {
     private String firstName;
     private String lastName;
-    private String avatar = "";
-    private int score = 0;
-
-    public UserModel(String defaultFirstName, String defaultLastName) {
-        firstName = defaultFirstName;
-        lastName = defaultLastName;
-    }
+    private String avatar;
+    private String score;
 
 
     public String getDisplayName() {
         return firstName + " " + lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setFirstName(String newFirstName) {
@@ -32,11 +35,11 @@ public class UserModel {
         return avatar;
     }
 
-    public void setScore(int newScore) {
+    public void setScore(String newScore) {
         score = newScore;
     }
 
-    public int getScore() {
+    public String getScore() {
         return score;
     }
 }

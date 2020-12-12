@@ -1,8 +1,23 @@
 <resources>
     <string name="app_name">dory</string>
+    <string name="studies_title">Studies</string>
+    <string name="welcome_message">Go to Profile</string>
+    <string name="go_to_study_location">Go to Study Location</string>
+    <string name="go_to_study_aquarium">Go to Study Aquarium</string>
+    <string name="go_to_study_filter">Go to Study Filter</string>
+    <string name="go_to_study_substrate">Go to Study Substrate</string>
+    <string name="go_to_study_heater">Go to Study Heater</string>
+    <string name="go_to_study_water">Go to Study Water</string>
+    <string name="go_to_study_nitrogen_cycle">Go to Study Nitrogen Cycle</string>
+    <string name="go_to_quiz">Go to Quiz</string>
+    <string name="sign_in_redirect">Do not have a account yet? Register</string>
     <string name="sign_in_email_input">Enter Email</string>
     <string name="sign_in_password_input">Enter Password</string>
     <string name="sign_in_submit_button">Sign In</string>
     <string name="sign_up_submit_button">Sign Up</string>
+    <string name="sign_up_redirect">Already have a account yet? Sign In</string>
     <string name="last_time_logged_in">Last Time Logged In</string>
+    <string name="title_activity_study">ScrollingActivity</string>
+    <string name="large_text">default_text</string>
+    <string name="action_settings">Settings</string>
 </resources>
