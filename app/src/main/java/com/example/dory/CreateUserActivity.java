@@ -29,14 +29,14 @@ public class CreateUserActivity extends AppCompatActivity {
     public void signUp(View view) {
         EditText emailEditText = findViewById(R.id.editTextEmail);
         EditText passwordEditText = findViewById(R.id.editTextPassword);
-        mAuth.signInWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
+        mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Log.d(TAG, "signInWithEmail:success");
+                        Log.d(TAG, "createUserWithEmailAndPassword:success");
                         FirebaseUser user = mAuth.getCurrentUser();
                         startActivity(new Intent(this, MainActivity.class));
                     } else {
-                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                        Log.w(TAG, "createUserWithEmailAndPassword:failure", task.getException());
                         Toast.makeText(CreateUserActivity.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }

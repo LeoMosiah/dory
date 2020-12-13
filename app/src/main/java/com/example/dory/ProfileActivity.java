@@ -52,8 +52,10 @@ public class ProfileActivity extends AppCompatActivity {
                 ImageButton imageButton = findViewById(R.id.user_avatar);
                 firstName.setText(user.getFirstName());
                 lastName.setText(user.getLastName());
-                Picasso.get().load(user.getAvatar()).into(imageButton);
                 score.setText(String.format("Score: %s", user.getScore()));
+                if (!user.getAvatar().isEmpty()) {
+                    Picasso.get().load(user.getAvatar()).into(imageButton);
+                }
             }
         });
     }
