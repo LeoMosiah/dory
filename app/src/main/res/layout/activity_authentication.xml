@@ -6,42 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".AuthenticationActivity">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="413dp"
+        android:layout_height="141dp"
+        android:background="#278AE1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/aquarium_management_quiz"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/sign_in_password_input"
         android:importantForAutofill="no"
         android:inputType="text|textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:drawableStart="@android:drawable/sym_action_email"
+        android:drawableLeft="@android:drawable/sym_action_email"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/sign_in_email_input"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="76dp"
         android:onClick="signIn"
         android:text="@string/sign_in_submit_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
@@ -51,26 +82,44 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="142dp"
         android:layout_marginLeft="142dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="142dp"
         android:layout_marginRight="142dp"
-        android:layout_marginBottom="82dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="12dp"
+        android:foreground="@drawable/common_google_signin_btn_icon_light"
+        app:layout_constraintBottom_toTopOf="@+id/sign_up_redirect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/sign_up_redirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginRight="94dp"
+        android:layout_marginBottom="204dp"
         android:text="@string/sign_in_redirect"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="195dp"
+        android:layout_marginLeft="195dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="196dp"
+        android:layout_marginRight="196dp"
+        android:layout_marginBottom="22dp"
+        android:text="@string/or"
+        app:layout_constraintBottom_toTopOf="@+id/google_sign_in_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.625" />
 </androidx.constraintlayout.widget.ConstraintLayout>
