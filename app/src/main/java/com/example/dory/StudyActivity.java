@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StudyActivity extends AppCompatActivity {
 
+    /**
+     * @param savedInstanceState current application instance
+     *  This function fetch the study document from firestore to render the content to the {@link StudyActivity}
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

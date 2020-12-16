@@ -26,6 +26,10 @@ public class QuizActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     ArrayList<QuizModel> questions = new ArrayList<>();
 
+    /**
+     * @param savedInstanceState current application instance
+     *  This function fetch all questions from firestore and prepares the {@link QuizActivity} to the first question
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +62,11 @@ public class QuizActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * This function prepares the {@link QuizActivity} for the question to be answered
+     * it takes the current position in the question array and changes the text in {@link TextView}
+     * @param position the position of the question array
+     */
     protected void prepareQuiz(int position) {
         TextView questionView = findViewById(R.id.quiz_question);
         questionView.setText(questions.get(position).question);
@@ -93,6 +102,10 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This function add one more point to the user's score and open a {@link AlertDialog}
+     * that will prepare the activity for the next question or return the user to the {@link MainActivity}
+     */
     protected void onCorrectAnswer() {
         DocumentReference docRef = db.collection("users").document(guid);
         Map<String, Object> updatedUser = new HashMap<>();
@@ -117,6 +130,12 @@ public class QuizActivity extends AppCompatActivity {
         alert.show();
     }
 
+    /**
+     * This function decrease one  point to the user's score and open a {@link AlertDialog}
+     * that will prepare the activity for the next question or retry the same question
+     * or return the user to the {@link MainActivity}
+     * it also prevents the user's score from becoming negative
+     */
     protected void onWrongAnswer() {
         if (Integer.parseInt(score) > 0) {
             DocumentReference docRef = db.collection("users").document(guid);

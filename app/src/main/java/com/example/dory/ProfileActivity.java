@@ -34,6 +34,10 @@ public class ProfileActivity extends AppCompatActivity {
     String guid;
     UserModel user;
 
+    /**
+     * @param savedInstanceState current application instance
+     *  This function fetch the user information from firestore and display all content into the {@link ProfileActivity}
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,10 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * @param view current view
+     *  This function triggers the image gallery intent
+     */
     public void onClickOnImage(View view) {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -78,6 +86,12 @@ public class ProfileActivity extends AppCompatActivity {
                 PICK_IMAGE_REQUEST);
     }
 
+    /**
+     * @param requestCode request code from activity result
+     * @param resultCode result code from activity result
+     * @param data image data
+     *  This function upload the image to the firebase storage and updates the user avatar information
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -106,6 +120,10 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * @param view current View
+     *  This function save all modification on the user information
+     */
     public void onSave (View view) {
         EditText firstName = findViewById(R.id.user_first_name);
         EditText lastName = findViewById(R.id.user_last_name);
